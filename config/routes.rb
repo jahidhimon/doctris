@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "doctors/index"
   resources :appointments
   devise_for :doctors
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   get "/doctors" => "doctors#index", as: "doctors"
+  get "/faqs" => "pages#faq", as: "faq"
+  get "/about" => "pages#about", as: "about"
 
   # Defines the root path route ("/")
   root "pages#home"

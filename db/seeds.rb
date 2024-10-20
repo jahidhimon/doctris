@@ -8,18 +8,19 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-10.times do
-  Department.create(
-    name: Faker::Job.field
-  )
-end
+# 10.times do
+#   Department.create(
+#     name: Faker::Job.field
+#   )
+# end
 
-100.times do |i|
-  Doctor.create(
-    name: Faker::FunnyName.name,
-    email: Faker::Internet.email,
-    specialty: "Sex",
-    department_id: Random.rand(1..10),
-    password: "helloworld"
-  )
-end
+# 100.times do |i|
+#   Doctor.create(
+#     name: Faker::FunnyName.name,
+#     email: Faker::Internet.email,
+#     specialty: "Sex",
+#     department_id: Random.rand(1..10),
+#     password: "helloworld"
+#   )
+# end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

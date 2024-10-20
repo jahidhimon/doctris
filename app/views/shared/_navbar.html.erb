@@ -16,8 +16,14 @@
       <%= link_to "Doctors", 
         doctors_path, class: (request.path == doctors_path ? "nav-link px-2 link-secondary" : "nav-link px-2 link-dark" ) %>
     </li>
-    <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
-    <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+    <li>
+      <%= link_to "FAQs", 
+        faq_path, class: (request.path == faq_path ? "nav-link px-2 link-secondary" : "nav-link px-2 link-dark" ) %>
+    </li>
+    <li>
+      <%= link_to "About", 
+        about_path, class: (request.path == about_path ? "nav-link px-2 link-secondary" : "nav-link px-2 link-dark" ) %>
+    </li>
   </ul>
 
   <div class="col-md-4 text-end d-flex justify-content-end">

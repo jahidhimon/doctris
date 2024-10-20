@@ -2,15 +2,23 @@
 
 <% content_for :title, "Appointments" %>
 
-<h1>Appointments</h1>
+<h2 class="mb-3">Appointments</h2>
 
 <div id="appointments">
+  <ol class="list-group numbered">
   <% @appointments.each do |appointment| %>
-    <%= render appointment %>
-    <p>
-      <%= link_to "Show this appointment", appointment %>
-    </p>
+    <%= link_to appointment, class: "nav-link link-dark" do %>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <span>
+            <%= appointment.doctor.name %>
+          </span>
+          <span>
+            <%= appointment.scheduled %>
+          </span>
+        </div>
+      </li>
+    <% end %>
   <% end %>
+  </ol>
 </div>
-
-<%= link_to "New appointment", new_appointment_path %>
