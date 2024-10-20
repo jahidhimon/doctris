@@ -1,24 +1,20 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Appointments" %>
-
 <h2 class="mb-3">Appointments</h2>
 
 <div id="appointments">
-  <ol class="list-group numbered">
-  <% @appointments.each do |appointment| %>
-    <%= link_to appointment, class: "nav-link link-dark" do %>
+  <ol class="list-group">
+    <% @appointments.each do |appointment| %>
       <li class="list-group-item">
-        <div class="d-flex justify-content-between">
-          <span>
-            <%= appointment.doctor.name %>
-          </span>
-          <span>
-            <%= appointment.scheduled %>
-          </span>
-        </div>
+        <%= link_to appointment, class: "nav-link link-dark" do %>
+          <div class="d-flex justify-content-between">
+            <span>
+              Doctor: <%= appointment.doctor.name %>
+            </span>
+            <span>
+              <%= appointment.scheduled %>
+            </span>
+          </div>
+        <% end %>
       </li>
     <% end %>
-  <% end %>
   </ol>
 </div>

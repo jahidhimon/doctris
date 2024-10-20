@@ -16,6 +16,8 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/1 or /appointments/1.json
   def show
+    @doctor = @appointment.doctor
+    @patient = @appointment.patient
   end
 
   # GET /appointments/new

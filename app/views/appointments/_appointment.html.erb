@@ -1,17 +1,17 @@
 <div id="<%= dom_id appointment %>">
   <p>
     <strong>Doctor:</strong>
-    <%= appointment.doctor_id %>
+    <%= @doctor.name %>
   </p>
 
   <p>
     <strong>Patient:</strong>
-    <%= appointment.patient_id %>
+    <%= @patient.name %>
   </p>
 
   <p>
     <strong>Scheduled:</strong>
-    <%= appointment.scheduled %>
+    <%= appointment.scheduled.to_fs(:long_ordinal) %>
   </p>
 
 </div>

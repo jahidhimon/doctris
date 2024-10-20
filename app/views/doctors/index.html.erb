@@ -1,2 +1,14 @@
-<h1>Doctors#index</h1>
-<p>Find me in app/views/doctors/index.html.erb</p>
+<h2 class="mb-3">Appointments</h2>
+
+<div id="doctos">
+  <ol class="list-group">
+    <%= @doctors.each do |doctor| %>
+      <li class="list-group-item">
+        <%= link_to doctor_path(doctor), class: "nav-link link-dark d-flex justify-content-between" do %>
+          <span><%= doctor.name %></span>
+          <span><%= doctor.specialty %></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</div>

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   get "/doctors" => "doctors#index", as: "doctors"
+  get "/doctor/:id" => "doctors#show", as: "doctor"
   get "/faqs" => "pages#faq", as: "faq"
   get "/about" => "pages#about", as: "about"
 
